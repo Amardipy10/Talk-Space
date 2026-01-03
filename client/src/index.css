@@ -1,0 +1,65 @@
+/* =========================
+   Global "Premium Grain" Setup
+========================= */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  opacity: 0.03; /* Very subtle */
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  z-index: 9999;
+}
+
+body {
+  background-attachment: fixed; /* Keeps glows in place during scroll */
+  cursor: default;
+}
+
+/* =========================
+   Enhanced Page Wrapper
+========================= */
+.page-wrapper {
+  /* Glassmorphism properties */
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background: rgba(15, 23, 42, 0.4); /* Dark translucent base */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  
+  /* Modern Edge Highlight */
+  mask-image: linear-gradient(to bottom, black, black); /* Smooth clipping */
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.8),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* =========================
+   Hyper-Spin Loading Logic
+========================= */
+.loading-spinner {
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+}
+
+/* Custom Selection Highlight */
+::selection {
+  background: var(--accent-neon);
+  color: var(--bg-dark);
+}
+
+/* Smooth Scroll for inner containers */
+.scroll-container {
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+}
+
+/* Accessibility: Respect system settings */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    transform: none !important;
+  }
+}

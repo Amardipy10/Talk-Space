@@ -1,0 +1,119 @@
+/* Custom Variable Palette */
+:root {
+    --dash-bg: #0f172a;
+    --card-bg: rgba(30, 41, 59, 0.7);
+    --neon-blue: #38bdf8;
+    --neon-purple: #818cf8;
+    --text-muted: #94a3b8;
+    --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+.dashboard-root {
+    background-color: var(--dash-bg);
+    min-height: 100vh;
+    color: #ffffff;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Background "Blobs" for depth */
+.bg-glow-top {
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 70%);
+    z-index: 0;
+}
+
+.bg-glow-bottom {
+    position: absolute;
+    bottom: -150px;
+    left: -150px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(129, 140, 248, 0.08) 0%, transparent 70%);
+    z-index: 0;
+}
+
+.dashboard-content-wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Typography & Headers */
+.dashboard-intro {
+    margin-bottom: 40px;
+}
+
+.welcome-heading {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+}
+
+.text-highlight {
+    background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.welcome-subtext {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+/* Mount the Home component inside a glass card */
+.home-component-mount {
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+/* Grid for Statistics/Action cards (assuming they are in Home.js) */
+.action-card, .stat-card {
+    background: rgba(15, 23, 42, 0.4) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: 16px !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.action-card:hover {
+    background: rgba(30, 41, 59, 0.9) !important;
+    border-color: var(--neon-blue) !important;
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
+}
+
+/* Scrollbar Styling for a finished look */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--dash-bg);
+}
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--neon-blue);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .welcome-heading { font-size: 1.8rem; }
+    .dashboard-content-wrapper { padding: 24px 16px; }
+    .home-component-mount { padding: 16px; border-radius: 16px; }
+}

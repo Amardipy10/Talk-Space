@@ -1,0 +1,109 @@
+/* Reuse the Portal Overlay from Login */
+.signup-glass {
+    background: rgba(30, 41, 59, 0.75);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 3rem;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* Success Animation */
+.success-state {
+    text-align: center;
+    padding: 20px 0;
+    animation: zoomIn 0.4s ease;
+}
+
+.success-icon-wrap {
+    width: 70px;
+    height: 70px;
+    background: #2dd4bf;
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    box-shadow: 0 0 20px rgba(45, 212, 191, 0.4);
+}
+
+/* Portal Input Overrides */
+.input-wrapper {
+    position: relative;
+    margin-bottom: 1.2rem;
+}
+
+.input-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6366f1;
+    font-size: 0.9rem;
+}
+
+.input-wrapper input {
+    width: 100%;
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px 12px 12px 40px;
+    border-radius: 12px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.input-wrapper input:focus {
+    outline: none;
+    border-color: #6366f1;
+    background: rgba(15, 23, 42, 0.7);
+}
+
+/* Vibrant Submit Button */
+.portal-submit-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
+    font-weight: 700;
+    margin-top: 10px;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(99, 102, 241, 0.3);
+}
+
+.portal-error-msg {
+    background: rgba(239, 68, 68, 0.1);
+    color: #fca5a5;
+    font-size: 0.8rem;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.link-text {
+    color: #818cf8;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 576px) {
+    .form-grid { grid-template-columns: 1fr; }
+    .signup-glass { padding: 2rem; margin: 15px; }
+}

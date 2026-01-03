@@ -1,0 +1,115 @@
+:root {
+    --glass-bg: rgba(125, 103, 161, 0.7);
+    --cyber-purple: #7000ff;
+    --cyber-pink: #ff00c8;
+    --main-gradient: linear-gradient(90deg, var(--cyber-purple), var(--cyber-pink));
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.main-nav-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 20px;
+}
+
+/* Floating Info Bar styling */
+.floating-info-bar {
+    background: var(--main-gradient);
+    color: white;
+    padding: 8px;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(112, 0, 255, 0.3);
+    animation: slideDown 0.5s ease-out;
+}
+
+.learn-more-btn {
+    color: white;
+    text-decoration: underline;
+    margin-left: 10px;
+    font-weight: 400;
+}
+
+/* Glass Navbar styling */
+.glass-navbar {
+    background: var(--glass-bg) !important;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    padding: 12px 20px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Logo & Brand text */
+.brand-identity {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-container {
+    background: white;
+    padding: 6px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.brand-text {
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+    background: var(--main-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Nav Links */
+.nav-custom-item {
+    color: #4b5563 !important;
+    font-weight: 600;
+    padding: 10px 15px !important;
+    transition: var(--transition);
+}
+
+.nav-custom-item:hover {
+    color: var(--cyber-purple) !important;
+    transform: translateY(-2px);
+}
+
+.get-started-btn {
+    background: var(--main-gradient);
+    color: white !important;
+    padding: 10px 25px !important;
+    border-radius: 15px;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(15, 14, 17, 0.2);
+    transition: var(--transition);
+}
+
+.get-started-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(146, 96, 26, 0.4);
+}
+
+/* Animated Hamburger */
+.animated-icon1 span {
+    background: var(--main-gradient) !important;
+    height: 3px !important;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+    .main-nav-wrapper { padding: 10px; }
+    .glass-navbar { border-radius: 15px; }
+    .floating-info-bar { font-size: 0.75rem; border-radius: 10px; }
+}

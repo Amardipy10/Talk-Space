@@ -1,0 +1,52 @@
+{
+	"name": "shubh-meet",
+	"version": "1.0.0",
+	"description": "Modern video conferencing application with Microsoft Teams-inspired design",
+	"private": true,
+	"workspaces": [
+		"client",
+		"server"
+	],
+	"scripts": {
+		"install:all": "npm install && npm install --prefix client && npm install --prefix server",
+		"start:client": "cd client && npm start",
+		"start:server": "cd server && npm run dev",
+		"start:both": "concurrently -n 'server,client' -c 'red,green' \"npm run start:server\" \"npm run start:client\"",
+		"build:client": "cd client && npm run build",
+		"build:server": "echo 'Server build not required'",
+		"build": "npm run build:client",
+		"test:client": "cd client && npm test",
+		"test:server": "cd server && npm test",
+		"test": "npm run test:client && npm run test:server",
+		"clean": "rm -rf node_modules client/node_modules server/node_modules",
+		"dev": "npm run start:both"
+	},
+	"dependencies": {
+		"concurrently": "^5.1.0"
+	},
+	"devDependencies": {},
+	"engines": {
+		"node": ">=12.16.3"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/your-username/shubh-meet.git"
+	},
+	"keywords": [
+		"video-conference",
+		"webrtc",
+		"react",
+		"express",
+		"socket.io",
+		"mongodb",
+		"microsoft-teams",
+		"real-time",
+		"chat"
+	],
+	"author": "Shubhank Kulshrestha",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/your-username/shubh-meet/issues"
+	},
+	"homepage": "https://github.com/your-username/shubh-meet#readme"
+}

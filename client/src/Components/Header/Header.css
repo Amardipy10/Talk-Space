@@ -1,0 +1,135 @@
+/* Custom Properties */
+:root {
+    --nav-bg: rgba(15, 23, 42, 0.85); /* Deep dark glass */
+    --accent-glow: #6366f1; /* Indigo neon */
+    --text-main: #f8fafc;
+    --transition-main: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.custom-header-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 1050;
+    padding: 10px 0;
+}
+
+.glass-nav {
+    background: var(--nav-bg) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    margin: 0 15px;
+    padding: 8px 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Brand Identity */
+.brand-identity {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-glow-wrapper {
+    background: white;
+    padding: 5px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+}
+
+.brand-logo {
+    height: 30px;
+    width: auto;
+}
+
+.brand-name-text {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    background: linear-gradient(to right, #fff, #a5b4fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Navigation Links */
+.nav-custom-link {
+    color: #94a3b8 !important;
+    padding: 8px 16px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: var(--transition-main);
+    position: relative;
+    font-size: 0.95rem;
+}
+
+.nav-custom-link:hover {
+    color: var(--accent-glow) !important;
+    transform: translateY(-2px);
+}
+
+.nav-custom-link.active {
+    color: #fff !important;
+}
+
+.nav-custom-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+    right: 16px;
+    height: 3px;
+    background: var(--accent-glow);
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+
+/* Logout Button */
+.btn-logout-neon {
+    background: rgba(239, 68, 68, 0.1) !important;
+    border: 1px solid rgba(239, 68, 68, 0.4) !important;
+    color: #ef4444 !important;
+    border-radius: 12px !important;
+    padding: 8px 20px !important;
+    font-weight: 600 !important;
+    transition: var(--transition-main) !important;
+}
+
+.btn-logout-neon:hover {
+    background: #ef4444 !important;
+    color: white !important;
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+}
+
+/* Hamburger Menu Morph */
+.modern-hamburger {
+    width: 25px;
+    height: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.modern-hamburger span {
+    height: 2px;
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    transition: var(--transition-main);
+}
+
+.modern-hamburger.is-open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.modern-hamburger.is-open span:nth-child(2) { opacity: 0; }
+.modern-hamburger.is-open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .glass-nav {
+        border-radius: 0;
+        margin: 0;
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}

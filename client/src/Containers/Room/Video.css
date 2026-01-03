@@ -1,0 +1,170 @@
+/* Video Room Master Theme */
+.video-room-root {
+    background-color: #0b0e14;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    color: white;
+}
+
+/* Lobby Styling */
+.lobby-container {
+    height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lobby-card {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 24px;
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
+    max-width: 900px;
+}
+
+.preview-window {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    background: #000;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+#my-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: rotateY(180deg);
+}
+
+.preview-overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0,0,0,0.5);
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+/* Main Video Grid */
+.video-grid {
+    padding: 20px;
+    height: calc(100vh - 150px);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-wrapper {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #1a1d23;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 2px solid #334155;
+    transition: all 0.3s ease;
+}
+
+.video-wrapper.active-speaker {
+    border-color: #6366f1;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+.video-grid video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.name-tag {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(4px);
+    padding: 5px 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Futuristic Control Bar */
+.control-bar {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(30, 41, 59, 0.8);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 12px 30px;
+    border-radius: 24px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    z-index: 1000;
+}
+
+.control-btn {
+    background: rgba(255,255,255,0.05) !important;
+    color: white !important;
+    transition: all 0.2s ease !important;
+}
+
+.control-btn:hover {
+    background: rgba(255,255,255,0.15) !important;
+}
+
+.control-btn.off {
+    color: #ef4444 !important;
+    background: rgba(239, 68, 68, 0.1) !important;
+}
+
+.control-btn.end-call {
+    background: #ef4444 !important;
+    color: white !important;
+}
+
+.control-btn.end-call:hover {
+    background: #dc2626 !important;
+    transform: scale(1.1);
+}
+
+/* Room Link Pill */
+.room-info-pill {
+    position: fixed;
+    top: 100px;
+    right: 30px;
+    background: rgba(30, 41, 59, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+    z-index: 100;
+}
+
+.room-id-tag {
+    font-family: monospace;
+    color: #38bdf8;
+    font-weight: 700;
+}
+
+.btn-copy-mini {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+}
+
+.btn-copy-mini:hover { color: white; }
